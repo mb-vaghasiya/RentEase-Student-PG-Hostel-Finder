@@ -833,5 +833,5 @@ app.use("/api", (req, res) => {
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {
-    console.log(`RentEase backend running on http://localhost:${PORT}`);
+    console.log(`RentEase backend running on port ${PORT}`);
 });
