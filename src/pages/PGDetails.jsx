@@ -36,7 +36,7 @@ function PGDetails() {
 
             try {
                 // Fetch single PG
-                const pgRes = await fetch(`http://localhost:5000/api/pgs/${id}`);
+                const pgRes = await fetch(`https://rentease-student-pg-hostel-finder.onrender.com/api/pgs/${id}`);
                 if (!pgRes.ok) {
                     if (pgRes.status === 404) {
                         throw new Error("This PG listing does not exist.");
@@ -47,7 +47,7 @@ function PGDetails() {
                 setPg(pgData);
 
                 // Fetch PG reviews
-                const reviewsRes = await fetch(`http://localhost:5000/api/pgs/${id}/reviews`);
+                const reviewsRes = await fetch(`https://rentease-student-pg-hostel-finder.onrender.com/api/pgs/${id}/reviews`);
                 if (reviewsRes.ok) {
                     const reviewsData = await reviewsRes.json();
                     setReviews(reviewsData);
@@ -94,7 +94,7 @@ function PGDetails() {
         setBookingLoading(true);
 
         try {
-            const res = await fetch("http://localhost:5000/api/bookings", {
+            const res = await fetch("https://rentease-student-pg-hostel-finder.onrender.com/api/bookings", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
@@ -134,7 +134,7 @@ function PGDetails() {
         setReviewLoading(true);
 
         try {
-            const res = await fetch(`http://localhost:5000/api/pgs/${id}/reviews`, {
+            const res = await fetch(`https://rentease-student-pg-hostel-finder.onrender.com/api/pgs/${id}/reviews`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({

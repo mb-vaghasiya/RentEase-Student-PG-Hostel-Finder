@@ -25,7 +25,7 @@ function Home() {
     useEffect(() => {
         async function fetchPGs() {
             try {
-                const response = await fetch("http://localhost:5000/api/pgs");
+                const response = await fetch("https://rentease-student-pg-hostel-finder.onrender.com/api/pgs");
                 if (!response.ok) {
                     throw new Error("Failed to load PG listings");
                 }

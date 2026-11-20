@@ -35,14 +35,14 @@ function MyListings() {
         async function fetchData() {
             try {
                 // Load owner's listings
-                const pgsRes = await fetch(`http://localhost:5000/api/pgs?owner_id=${userId}`);
+                const pgsRes = await fetch(`https://rentease-student-pg-hostel-finder.onrender.com/api/pgs?owner_id=${userId}`);
                 if (pgsRes.ok && !ignore) {
                     const pgsData = await pgsRes.json();
                     setPgs(pgsData);
                 }
 
                 // Load bookings for this owner
-                const bookingsRes = await fetch(`http://localhost:5000/api/bookings/owner/${userId}`);
+                const bookingsRes = await fetch(`https://rentease-student-pg-hostel-finder.onrender.com/api/bookings/owner/${userId}`);
                 if (bookingsRes.ok && !ignore) {
                     const bookingsData = await bookingsRes.json();
                     setBookings(bookingsData);
@@ -64,7 +64,7 @@ function MyListings() {
 
     async function handleStatusUpdate(bookingId, newStatus) {
         try {
-            const res = await fetch(`http://localhost:5000/api/bookings/${bookingId}/status`, {
+            const res = await fetch(`https://rentease-student-pg-hostel-finder.onrender.com/api/bookings/${bookingId}/status`, {
                 method: "PATCH",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ status: newStatus })
@@ -88,7 +88,7 @@ function MyListings() {
         }
 
         try {
-            const res = await fetch(`http://localhost:5000/api/pgs/${pgId}`, {
+            const res = await fetch(`https://rentease-student-pg-hostel-finder.onrender.com/api/pgs/${pgId}`, {
                 method: "DELETE"
             });
 
@@ -125,7 +125,7 @@ function MyListings() {
         setSaving(true);
 
         try {
-            const res = await fetch(`http://localhost:5000/api/pgs/${editingPG.id}`, {
+            const res = await fetch(`https://rentease-student-pg-hostel-finder.onrender.com/api/pgs/${editingPG.id}`, {
                 method: "PUT",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({

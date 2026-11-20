@@ -43,7 +43,7 @@ function AddPG() {
 
         try {
             const response = await fetch(
-                "http://localhost:5000/api/pgs",
+                "https://rentease-student-pg-hostel-finder.onrender.com/api/pgs",
                 {
                     method: "POST",
                     headers: {

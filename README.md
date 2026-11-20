@@ -63,7 +63,7 @@ Or navigate into the backend folder:
 cd backend
 npm start
 ```
-The backend server runs on `http://localhost:5000`.
+The backend server runs on `https://rentease-student-pg-hostel-finder.onrender.com`.
 
 ### 3. Start the Frontend Dev Server
 From the root directory:

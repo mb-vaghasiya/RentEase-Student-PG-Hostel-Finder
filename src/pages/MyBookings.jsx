@@ -19,7 +19,7 @@ function MyBookings() {
             }
 
             try {
-                const res = await fetch(`http://localhost:5000/api/bookings/student/${userId}`);
+                const res = await fetch(`https://rentease-student-pg-hostel-finder.onrender.com/api/bookings/student/${userId}`);
                 if (!res.ok) {
                     throw new Error("Could not load your bookings.");
                 }
@@ -42,7 +42,7 @@ function MyBookings() {
         }
 
         try {
-            const res = await fetch(`http://localhost:5000/api/bookings/${bookingId}/status`, {
+            const res = await fetch(`https://rentease-student-pg-hostel-finder.onrender.com/api/bookings/${bookingId}/status`, {
                 method: "PATCH",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ status: "cancelled" })
